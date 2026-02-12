@@ -1,0 +1,14 @@
+{
+  "name": "flower-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.12.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "docker compose up -d postgres redis && pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck"
+  }
+}
